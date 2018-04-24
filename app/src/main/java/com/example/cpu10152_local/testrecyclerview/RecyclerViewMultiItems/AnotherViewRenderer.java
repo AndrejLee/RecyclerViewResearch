@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.example.cpu10152_local.testrecyclerview.R;
+import com.example.cpu10152_local.testrecyclerview.YourModel;
 
 /**
  * Created by cpu10152-local on 24/04/2018.
@@ -14,7 +15,7 @@ import com.example.cpu10152_local.testrecyclerview.R;
 
 public class AnotherViewRenderer extends ViewRenderer<AnotherModel, AnotherViewHolder> {
 
-    public AnotherViewRenderer(final int type, final Context context) {
+    public AnotherViewRenderer(int type, Context context) {
         super(type, context);
     }
 

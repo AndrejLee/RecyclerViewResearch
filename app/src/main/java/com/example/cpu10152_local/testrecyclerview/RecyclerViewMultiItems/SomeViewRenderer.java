@@ -7,10 +7,11 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.example.cpu10152_local.testrecyclerview.R;
+import com.example.cpu10152_local.testrecyclerview.YourModel;
 
 public class SomeViewRenderer extends ViewRenderer<SomeModel, SomeViewHolder> {
 
-    public SomeViewRenderer(final int type, final Context context) {
+    public SomeViewRenderer(int type, Context context) {
         super(type, context);
     }
 

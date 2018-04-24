@@ -1,11 +1,13 @@
 package com.example.cpu10152_local.testrecyclerview.RecyclerViewMultiItems;
 
 import android.support.annotation.NonNull;
+import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class RendererRecyclerViewAdapter extends RecyclerView.Adapter {
 
@@ -64,7 +66,7 @@ public class RendererRecyclerViewAdapter extends RecyclerView.Adapter {
         return mItems.size();
     }
 
-    public void setItems(@NonNull final ArrayList items){
+    public void setItems(List<ItemModel> items) {
         mItems.clear();
         mItems.addAll(items);
     }

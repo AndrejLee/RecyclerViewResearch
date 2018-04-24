@@ -4,8 +4,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.TextView;
 
 import com.example.cpu10152_local.testrecyclerview.R;
+import com.example.cpu10152_local.testrecyclerview.ViewBinder;
+import com.example.cpu10152_local.testrecyclerview.YourModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +26,13 @@ public class RecyclerViewMultiItems extends AppCompatActivity {
         mRecyclerViewAdapter = new RendererRecyclerViewAdapter();
         mRecyclerViewAdapter.registerRenderer(new SomeViewRenderer(SomeModel.TYPE, this));
         mRecyclerViewAdapter.registerRenderer(new AnotherViewRenderer(AnotherModel.TYPE, this));
+        mRecyclerViewAdapter.registerRenderer(new ViewBinder<>(
+                R.layout.your_layout,
+                YourModel.class,
+                this,
+                (model, holder) -> ((TextView)holder.find(R.id.yourTextView))
+                        .setText(model.getYourText())
+        ));
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -33,6 +43,12 @@ public class RecyclerViewMultiItems extends AppCompatActivity {
     }
 
     private ArrayList getItems() {
+        mItems.add(new YourModel("1"));
+        mItems.add(new YourModel("2"));
+        mItems.add(new YourModel("3"));
+        mItems.add(new YourModel("4"));
+        mItems.add(new YourModel("5"));
+        mItems.add(new YourModel("6"));
         mItems.add(new SomeModel("Title 1"));
         mItems.add(new SomeModel("Title 2"));
         mItems.add(new SomeModel("Title 3"));

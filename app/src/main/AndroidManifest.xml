@@ -16,7 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NestedRecyclerView" />
+        <activity android:name=".NestedRecyclerView.NestedRecyclerView" />
         <activity android:name=".RecyclerViewMultiItems.RecyclerViewMultiItems"></activity>
     </application>
 
